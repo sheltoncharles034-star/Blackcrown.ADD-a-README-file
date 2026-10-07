@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Black Crown Legacy</title>
+<meta name="description" content="Black Crown Legacy: a cinematic royal empire built around power, loyalty, betrayal, and the fight to keep the crown. New episodes on YouTube Shorts.">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="Black Crown Legacy">
+<meta property="og:description" content="The Panther King. A kingdom under siege. New episodes on YouTube Shorts.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+
+<!--
+  EDIT YOUR LINKS: search this file for "YOUR_" and replace each one.
+    YOUR_SUBSCRIBE_LINK -> your channel URL with ?sub_confirmation=1 on the end
+    YOUR_EPISODE_LINK   -> the YouTube link for the episode
+-->
+
+<style>
+  :root {
+    --black: #000000;
+    --gold: #d4a532;
+    --gold-bright: #f2ce6b;
+    --gold-deep: #7d5f19;
+    --bone: #ede6d6;
+    --ash: #a39b8d;
+    --display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+    --body: "Jost", "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--black);
+    color: var(--bone);
+    font-family: var(--body);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 4px; }
+
+  .hero {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: calc(2rem + env(safe-area-inset-top, 0px)) 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse at 50% 28%, rgba(212,165,50,0.10), transparent 55%),
+      var(--black);
+  }
+  .eyes {
+    display: flex;
+    gap: clamp(2.2rem, 12vw, 5rem);
+    margin-bottom: 2.5rem;
+  }
+  .eye {
+    width: clamp(46px, 13vw, 78px);
+    height: clamp(18px, 5vw, 30px);
+    background: radial-gradient(ellipse at 50% 50%, var(--gold-bright) 0%, var(--gold) 55%, var(--gold-deep) 100%);
+    border-radius: 100% 0 100% 0;
+    transform: scaleY(0);
+    box-shadow: 0 0 28px 6px rgba(212,165,50,0.55), 0 0 90px 24px rgba(212,165,50,0.22);
+    position: relative;
+    animation: open 1.6s 0.5s cubic-bezier(.2,.8,.2,1) forwards;
+  }
+  .eye:first-child { transform: scaleY(0) scaleX(-1); animation-name: open-left; }
+  .eye::after {
+    content: "";
+    position: absolute;
+    left: 50%; top: 8%;
+    width: 7%; height: 84%;
+    background: var(--black);
+    border-radius: 50%;
+    transform: translateX(-50%);
+  }
+  @keyframes open { to { transform: scaleY(1); } }
+  @keyframes open-left { to { transform: scaleY(1) scaleX(-1); } }
+
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(2.6rem, 11vw, 6.2rem);
+    line-height: 0.98;
+    letter-spacing: 0.01em;
+    background: linear-gradient(180deg, var(--gold-bright) 10%, var(--gold) 55%, var(--gold-deep) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    opacity: 0;
+    animation: rise 1.4s 1.7s ease forwards;
+  }
+  .hero .line {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(1.15rem, 4.2vw, 1.6rem);
+    color: var(--bone);
+    margin-top: 1.1rem;
+    opacity: 0;
+    animation: rise 1.2s 2.3s ease forwards;
+  }
+  .hero .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    justify-content: center;
+    margin-top: 2.4rem;
+    opacity: 0;
+    animation: rise 1s 2.8s ease forwards;
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.85rem 1.7rem;
+    font-family: var(--body);
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    border: 1.5px solid var(--gold);
+    color: var(--gold-bright);
+    border-radius: 2px;
+    transition: background .2s, color .2s;
+  }
+  .btn:hover { background: rgba(212,165,50,0.14); }
+  .btn.primary { background: var(--gold); color: var(--black); }
+  .btn.primary:hover { background: var(--gold-bright); }
+
+  section.block { max-width: 44rem; margin: 0 auto; padding: 5rem 1.5rem; }
+  section.block + section.block { border-top: 1px solid rgba(212,165,50,0.22); }
+  h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(1.9rem, 6vw, 2.7rem);
+    line-height: 1.1;
+    color: var(--gold-bright);
+    margin-bottom: 1.4rem;
+  }
+  p + p { margin-top: 1.1rem; }
+  .muted { color: var(--ash); }
+
+  .cliff {
+    margin-top: 1.8rem;
+    padding-left: 1.2rem;
+    border-left: 3px solid var(--gold);
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 1.25rem;
+    line-height: 1.45;
+    color: var(--bone);
+  }
+
+  .episodes { list-style: none; }
+  .episodes li { border-bottom: 1px solid rgba(237,230,214,0.12); }
+  .episodes a {
+    display: grid;
+    grid-template-columns: 4.2rem 1fr;
+    gap: 1rem;
+    align-items: baseline;
+    padding: 1.25rem 0;
+    text-decoration: none;
+  }
+  .episodes .num { font-family: var(--display); font-size: 1.6rem; font-weight: 700; color: var(--gold); }
+  .episodes .title { font-family: var(--display); font-size: 1.3rem; font-weight: 500; color: var(--bone); }
+  .episodes .note { display: block; font-size: 0.95rem; color: var(--ash); margin-top: 0.15rem; }
+  .episodes a:hover .title { color: var(--gold-bright); }
+  .episodes .soon .num, .episodes .soon .title { color: var(--ash); }
+  .episodes .soon { cursor: default; }
+
+  .follow { text-align: center; }
+  .follow p { max-width: 30rem; margin-left: auto; margin-right: auto; }
+  .follow .btn { margin-top: 2rem; }
+
+  footer {
+    text-align: center;
+    padding: 2.5rem 1.5rem calc(3rem + env(safe-area-inset-bottom, 0px));
+    color: var(--ash);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(212,165,50,0.22);
+  }
+  footer strong { font-family: var(--display); color: var(--gold); font-weight: 700; letter-spacing: 0.03em; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .eye, .eye:first-child { animation: none; transform: scaleY(1); }
+    .eye:first-child { transform: scaleY(1) scaleX(-1); }
+    .hero h1, .hero .line, .hero .actions { animation: none; opacity: 1; }
+  }
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+  <div class="eyes" aria-hidden="true">
+    <div class="eye"></div>
+    <div class="eye"></div>
+  </div>
+  <h1>Black Crown<br>Legacy</h1>
+  <p class="line">Power is easy to take. Keeping the crown is the fight.</p>
+  <div class="actions">
+    <a class="btn primary" href="YOUR_SUBSCRIBE_LINK">Subscribe on YouTube</a>
+    <a class="btn" href="#episodes">Watch the episodes</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="block story" id="story">
+    <h2>The Panther King</h2>
+    <p>He rules a gold kingdom from a throne of black stone, with two enormous black panthers at his side and an army in gold armor at his back. Wealth, loyalty, and fear hold the empire together.</p>
+    <p>Every ruler has rivals. Every kingdom has people waiting for it to fall.</p>
+    <p class="cliff">A storm like no one has ever seen is tearing through the kingdom. Rivals are using the chaos to move on the throne. The King could hide. Instead, he walks out into the storm.</p>
+  </section>
+
+  <section class="block" id="episodes">
+    <h2>Episodes</h2>
+    <p class="muted" style="margin-bottom:1rem;">Every episode ends on a cliffhanger. Start at the top and keep going.</p>
+    <ol class="episodes">
+      <li>
+        <a href="YOUR_EPISODE_LINK">
+          <span class="num">2</span>
+          <span><span class="title">The Challenger</span><span class="note">A rival steps forward and the throne room goes silent.</span></span>
+        </a>
+      </li>
+      <li class="soon">
+        <a>
+          <span class="num">3</span>
+          <span><span class="title">Coming soon</span><span class="note">Subscribe so you don't miss it.</span></span>
+        </a>
+      </li>
+    </ol>
+  </section>
+
+  <section class="block follow" id="follow">
+    <h2>Join the Legacy</h2>
+    <p>New episodes drop on YouTube Shorts. Subscribe and find out who survives the storm.</p>
+    <a class="btn primary" href="YOUR_SUBSCRIBE_LINK">Subscribe on YouTube</a>
+  </section>
+
+</main>
+
+<footer>
+  <p><strong>Black Crown Legacy</strong></p>
+  <p style="margin-top:.4rem;">blackcrown.live</p>
+</footer>
+
+</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Black Crown Legacy</title>
+<meta name="description" content="Black Crown Legacy: a cinematic royal empire built around power, loyalty, betrayal, and the fight to keep the crown. New episodes on YouTube Shorts.">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="Black Crown Legacy">
+<meta property="og:description" content="The Panther King. A kingdom under siege. New episodes on YouTube Shorts.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+
+<!--
+  EDIT YOUR LINKS: search this file for "YOUR_" and replace each one.
+    YOUR_SUBSCRIBE_LINK -> your channel URL with ?sub_confirmation=1 on the end
+    YOUR_EPISODE_LINK   -> the YouTube link for the episode
+-->
+
+<style>
+  :root {
+    --black: #000000;
+    --gold: #d4a532;
+    --gold-bright: #f2ce6b;
+    --gold-deep: #7d5f19;
+    --bone: #ede6d6;
+    --ash: #a39b8d;
+    --display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+    --body: "Jost", "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--black);
+    color: var(--bone);
+    font-family: var(--body);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 4px; }
+
+  .hero {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: calc(2rem + env(safe-area-inset-top, 0px)) 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse at 50% 28%, rgba(212,165,50,0.10), transparent 55%),
+      var(--black);
+  }
+  .eyes {
+    display: flex;
+    gap: clamp(2.2rem, 12vw, 5rem);
+    margin-bottom: 2.5rem;
+  }
+  .eye {
+    width: clamp(46px, 13vw, 78px);
+    height: clamp(18px, 5vw, 30px);
+    background: radial-gradient(ellipse at 50% 50%, var(--gold-bright) 0%, var(--gold) 55%, var(--gold-deep) 100%);
+    border-radius: 100% 0 100% 0;
+    transform: scaleY(0);
+    box-shadow: 0 0 28px 6px rgba(212,165,50,0.55), 0 0 90px 24px rgba(212,165,50,0.22);
+    position: relative;
+    animation: open 1.6s 0.5s cubic-bezier(.2,.8,.2,1) forwards;
+  }
+  .eye:first-child { transform: scaleY(0) scaleX(-1); animation-name: open-left; }
+  .eye::after {
+    content: "";
+    position: absolute;
+    left: 50%; top: 8%;
+    width: 7%; height: 84%;
+    background: var(--black);
+    border-radius: 50%;
+    transform: translateX(-50%);
+  }
+  @keyframes open { to { transform: scaleY(1); } }
+  @keyframes open-left { to { transform: scaleY(1) scaleX(-1); } }
+
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(2.6rem, 11vw, 6.2rem);
+    line-height: 0.98;
+    letter-spacing: 0.01em;
+    background: linear-gradient(180deg, var(--gold-bright) 10%, var(--gold) 55%, var(--gold-deep) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    opacity: 0;
+    animation: rise 1.4s 1.7s ease forwards;
+  }
+  .hero .line {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(1.15rem, 4.2vw, 1.6rem);
+    color: var(--bone);
+    margin-top: 1.1rem;
+    opacity: 0;
+    animation: rise 1.2s 2.3s ease forwards;
+  }
+  .hero .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    justify-content: center;
+    margin-top: 2.4rem;
+    opacity: 0;
+    animation: rise 1s 2.8s ease forwards;
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.85rem 1.7rem;
+    font-family: var(--body);
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    border: 1.5px solid var(--gold);
+    color: var(--gold-bright);
+    border-radius: 2px;
+    transition: background .2s, color .2s;
+  }
+  .btn:hover { background: rgba(212,165,50,0.14); }
+  .btn.primary { background: var(--gold); color: var(--black); }
+  .btn.primary:hover { background: var(--gold-bright); }
+
+  section.block { max-width: 44rem; margin: 0 auto; padding: 5rem 1.5rem; }
+  section.block + section.block { border-top: 1px solid rgba(212,165,50,0.22); }
+  h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(1.9rem, 6vw, 2.7rem);
+    line-height: 1.1;
+    color: var(--gold-bright);
+    margin-bottom: 1.4rem;
+  }
+  p + p { margin-top: 1.1rem; }
+  .muted { color: var(--ash); }
+
+  .cliff {
+    margin-top: 1.8rem;
+    padding-left: 1.2rem;
+    border-left: 3px solid var(--gold);
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 1.25rem;
+    line-height: 1.45;
+    color: var(--bone);
+  }
+
+  .episodes { list-style: none; }
+  .episodes li { border-bottom: 1px solid rgba(237,230,214,0.12); }
+  .episodes a {
+    display: grid;
+    grid-template-columns: 4.2rem 1fr;
+    gap: 1rem;
+    align-items: baseline;
+    padding: 1.25rem 0;
+    text-decoration: none;
+  }
+  .episodes .num { font-family: var(--display); font-size: 1.6rem; font-weight: 700; color: var(--gold); }
+  .episodes .title { font-family: var(--display); font-size: 1.3rem; font-weight: 500; color: var(--bone); }
+  .episodes .note { display: block; font-size: 0.95rem; color: var(--ash); margin-top: 0.15rem; }
+  .episodes a:hover .title { color: var(--gold-bright); }
+  .episodes .soon .num, .episodes .soon .title { color: var(--ash); }
+  .episodes .soon { cursor: default; }
+
+  .follow { text-align: center; }
+  .follow p { max-width: 30rem; margin-left: auto; margin-right: auto; }
+  .follow .btn { margin-top: 2rem; }
+
+  footer {
+    text-align: center;
+    padding: 2.5rem 1.5rem calc(3rem + env(safe-area-inset-bottom, 0px));
+    color: var(--ash);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(212,165,50,0.22);
+  }
+  footer strong { font-family: var(--display); color: var(--gold); font-weight: 700; letter-spacing: 0.03em; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .eye, .eye:first-child { animation: none; transform: scaleY(1); }
+    .eye:first-child { transform: scaleY(1) scaleX(-1); }
+    .hero h1, .hero .line, .hero .actions { animation: none; opacity: 1; }
+  }
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+  <div class="eyes" aria-hidden="true">
+    <div class="eye"></div>
+    <div class="eye"></div>
+  </div>
+  <h1>Black Crown<br>Legacy</h1>
+  <p class="line">Power is easy to take. Keeping the crown is the fight.</p>
+  <div class="actions">
+    <a class="btn primary" href="YOUR_SUBSCRIBE_LINK">Subscribe on YouTube</a>
+    <a class="btn" href="#episodes">Watch the episodes</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="block story" id="story">
+    <h2>The Panther King</h2>
+    <p>He rules a gold kingdom from a throne of black stone, with two enormous black panthers at his side and an army in gold armor at his back. Wealth, loyalty, and fear hold the empire together.</p>
+    <p>Every ruler has rivals. Every kingdom has people waiting for it to fall.</p>
+    <p class="cliff">A storm like no one has ever seen is tearing through the kingdom. Rivals are using the chaos to move on the throne. The King could hide. Instead, he walks out into the storm.</p>
+  </section>
+
+  <section class="block" id="episodes">
+    <h2>Episodes</h2>
+    <p class="muted" style="margin-bottom:1rem;">Every episode ends on a cliffhanger. Start at the top and keep going.</p>
+    <ol class="episodes">
+      <li>
+        <a href="YOUR_EPISODE_LINK">
+          <span class="num">2</span>
+          <span><span class="title">The Challenger</span><span class="note">A rival steps forward and the throne room goes silent.</span></span>
+        </a>
+      </li>
+      <li class="soon">
+        <a>
+          <span class="num">3</span>
+          <span><span class="title">Coming soon</span><span class="note">Subscribe so you don't miss it.</span></span>
+        </a>
+      </li>
+    </ol>
+  </section>
+
+  <section class="block follow" id="follow">
+    <h2>Join the Legacy</h2>
+    <p>New episodes drop on YouTube Shorts. Subscribe and find out who survives the storm.</p>
+    <a class="btn primary" href="YOUR_SUBSCRIBE_LINK">Subscribe on YouTube</a>
+  </section>
+
+</main>
+
+<footer>
+  <p><strong>Black Crown Legacy</strong></p>
+  <p style="margin-top:.4rem;">blackcrown.live</p>
+</footer>
+
+</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Black Crown Legacy</title>
+<meta name="description" content="Black Crown Legacy: a cinematic royal empire built around power, loyalty, betrayal, and the fight to keep the crown. New episodes on YouTube Shorts.">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="Black Crown Legacy">
+<meta property="og:description" content="The Panther King. A kingdom under siege. New episodes on YouTube Shorts.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+
+<!--
+  EDIT YOUR LINKS: search this file for "YOUR_" and replace each one.
+    YOUR_SUBSCRIBE_LINK -> your channel URL with ?sub_confirmation=1 on the end
+    YOUR_EPISODE_LINK   -> the YouTube link for the episode
+-->
+
+<style>
+  :root {
+    --black: #000000;
+    --gold: #d4a532;
+    --gold-bright: #f2ce6b;
+    --gold-deep: #7d5f19;
+    --bone: #ede6d6;
+    --ash: #a39b8d;
+    --display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+    --body: "Jost", "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--black);
+    color: var(--bone);
+    font-family: var(--body);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 4px; }
+
+  .hero {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: calc(2rem + env(safe-area-inset-top, 0px)) 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse at 50% 28%, rgba(212,165,50,0.10), transparent 55%),
+      var(--black);
+  }
+  .eyes {
+    display: flex;
+    gap: clamp(2.2rem, 12vw, 5rem);
+    margin-bottom: 2.5rem;
+  }
+  .eye {
+    width: clamp(46px, 13vw, 78px);
+    height: clamp(18px, 5vw, 30px);
+    background: radial-gradient(ellipse at 50% 50%, var(--gold-bright) 0%, var(--gold) 55%, var(--gold-deep) 100%);
+    border-radius: 100% 0 100% 0;
+    transform: scaleY(0);
+    box-shadow: 0 0 28px 6px rgba(212,165,50,0.55), 0 0 90px 24px rgba(212,165,50,0.22);
+    position: relative;
+    animation: open 1.6s 0.5s cubic-bezier(.2,.8,.2,1) forwards;
+  }
+  .eye:first-child { transform: scaleY(0) scaleX(-1); animation-name: open-left; }
+  .eye::after {
+    content: "";
+    position: absolute;
+    left: 50%; top: 8%;
+    width: 7%; height: 84%;
+    background: var(--black);
+    border-radius: 50%;
+    transform: translateX(-50%);
+  }
+  @keyframes open { to { transform: scaleY(1); } }
+  @keyframes open-left { to { transform: scaleY(1) scaleX(-1); } }
+
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(2.6rem, 11vw, 6.2rem);
+    line-height: 0.98;
+    letter-spacing: 0.01em;
+    background: linear-gradient(180deg, var(--gold-bright) 10%, var(--gold) 55%, var(--gold-deep) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    opacity: 0;
+    animation: rise 1.4s 1.7s ease forwards;
+  }
+  .hero .line {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(1.15rem, 4.2vw, 1.6rem);
+    color: var(--bone);
+    margin-top: 1.1rem;
+    opacity: 0;
+    animation: rise 1.2s 2.3s ease forwards;
+  }
+  .hero .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    justify-content: center;
+    margin-top: 2.4rem;
+    opacity: 0;
+    animation: rise 1s 2.8s ease forwards;
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.85rem 1.7rem;
+    font-family: var(--body);
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    border: 1.5px solid var(--gold);
+    color: var(--gold-bright);
+    border-radius: 2px;
+    transition: background .2s, color .2s;
+  }
+  .btn:hover { background: rgba(212,165,50,0.14); }
+  .btn.primary { background: var(--gold); color: var(--black); }
+  .btn.primary:hover { background: var(--gold-bright); }
+
+  section.block { max-width: 44rem; margin: 0 auto; padding: 5rem 1.5rem; }
+  section.block + section.block { border-top: 1px solid rgba(212,165,50,0.22); }
+  h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(1.9rem, 6vw, 2.7rem);
+    line-height: 1.1;
+    color: var(--gold-bright);
+    margin-bottom: 1.4rem;
+  }
+  p + p { margin-top: 1.1rem; }
+  .muted { color: var(--ash); }
+
+  .cliff {
+    margin-top: 1.8rem;
+    padding-left: 1.2rem;
+    border-left: 3px solid var(--gold);
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 1.25rem;
+    line-height: 1.45;
+    color: var(--bone);
+  }
+
+  .episodes { list-style: none; }
+  .episodes li { border-bottom: 1px solid rgba(237,230,214,0.12); }
+  .episodes a {
+    display: grid;
+    grid-template-columns: 4.2rem 1fr;
+    gap: 1rem;
+    align-items: baseline;
+    padding: 1.25rem 0;
+    text-decoration: none;
+  }
+  .episodes .num { font-family: var(--display); font-size: 1.6rem; font-weight: 700; color: var(--gold); }
+  .episodes .title { font-family: var(--display); font-size: 1.3rem; font-weight: 500; color: var(--bone); }
+  .episodes .note { display: block; font-size: 0.95rem; color: var(--ash); margin-top: 0.15rem; }
+  .episodes a:hover .title { color: var(--gold-bright); }
+  .episodes .soon .num, .episodes .soon .title { color: var(--ash); }
+  .episodes .soon { cursor: default; }
+
+  .follow { text-align: center; }
+  .follow p { max-width: 30rem; margin-left: auto; margin-right: auto; }
+  .follow .btn { margin-top: 2rem; }
+
+  footer {
+    text-align: center;
+    padding: 2.5rem 1.5rem calc(3rem + env(safe-area-inset-bottom, 0px));
+    color: var(--ash);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(212,165,50,0.22);
+  }
+  footer strong { font-family: var(--display); color: var(--gold); font-weight: 700; letter-spacing: 0.03em; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .eye, .eye:first-child { animation: none; transform: scaleY(1); }
+    .eye:first-child { transform: scaleY(1) scaleX(-1); }
+    .hero h1, .hero .line, .hero .actions { animation: none; opacity: 1; }
+  }
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+  <div class="eyes" aria-hidden="true">
+    <div class="eye"></div>
+    <div class="eye"></div>
+  </div>
+  <h1>Black Crown<br>Legacy</h1>
+  <p class="line">Power is easy to take. Keeping the crown is the fight.</p>
+  <div class="actions">
+    <a class="btn primary" href="YOUR_SUBSCRIBE_LINK">Subscribe on YouTube</a>
+    <a class="btn" href="#episodes">Watch the episodes</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="block story" id="story">
+    <h2>The Panther King</h2>
+    <p>He rules a gold kingdom from a throne of black stone, with two enormous black panthers at his side and an army in gold armor at his back. Wealth, loyalty, and fear hold the empire together.</p>
+    <p>Every ruler has rivals. Every kingdom has people waiting for it to fall.</p>
+    <p class="cliff">A storm like no one has ever seen is tearing through the kingdom. Rivals are using the chaos to move on the throne. The King could hide. Instead, he walks out into the storm.</p>
+  </section>
+
+  <section class="block" id="episodes">
+    <h2>Episodes</h2>
+    <p class="muted" style="margin-bottom:1rem;">Every episode ends on a cliffhanger. Start at the top and keep going.</p>
+    <ol class="episodes">
+      <li>
+        <a href="YOUR_EPISODE_LINK">
+          <span class="num">2</span>
+          <span><span class="title">The Challenger</span><span class="note">A rival steps forward and the throne room goes silent.</span></span>
+        </a>
+      </li>
+      <li class="soon">
+        <a>
+          <span class="num">3</span>
+          <span><span class="title">Coming soon</span><span class="note">Subscribe so you don't miss it.</span></span>
+        </a>
+      </li>
+    </ol>
+  </section>
+
+  <section class="block follow" id="follow">
+    <h2>Join the Legacy</h2>
+    <p>New episodes drop on YouTube Shorts. Subscribe and find out who survives the storm.</p>
+    <a class="btn primary" href="YOUR_SUBSCRIBE_LINK">Subscribe on YouTube</a>
+  </section>
+
+</main>
+
+<footer>
+  <p><strong>Black Crown Legacy</strong></p>
+  <p style="margin-top:.4rem;">blackcrown.live</p>
+</footer>
+
+</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Black Crown Legacy</title>
+<meta name="description" content="Black Crown Legacy: a cinematic royal empire built around power, loyalty, betrayal, and the fight to keep the crown. New episodes on YouTube Shorts.">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="Black Crown Legacy">
+<meta property="og:description" content="The Panther King. A kingdom under siege. New episodes on YouTube Shorts.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+
+<!--
+  EDIT YOUR LINKS: search this file for "YOUR_" and replace each one.
+    YOUR_SUBSCRIBE_LINK -> your channel URL with ?sub_confirmation=1 on the end
+    YOUR_EPISODE_LINK   -> the YouTube link for the episode
+-->
+
+<style>
+  :root {
+    --black: #000000;
+    --gold: #d4a532;
+    --gold-bright: #f2ce6b;
+    --gold-deep: #7d5f19;
+    --bone: #ede6d6;
+    --ash: #a39b8d;
+    --display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+    --body: "Jost", "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--black);
+    color: var(--bone);
+    font-family: var(--body);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 4px; }
+
+  .hero {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: calc(2rem + env(safe-area-inset-top, 0px)) 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse at 50% 28%, rgba(212,165,50,0.10), transparent 55%),
+      var(--black);
+  }
+  .eyes {
+    display: flex;
+    gap: clamp(2.2rem, 12vw, 5rem);
+    margin-bottom: 2.5rem;
+  }
+  .eye {
+    width: clamp(46px, 13vw, 78px);
+    height: clamp(18px, 5vw, 30px);
+    background: radial-gradient(ellipse at 50% 50%, var(--gold-bright) 0%, var(--gold) 55%, var(--gold-deep) 100%);
+    border-radius: 100% 0 100% 0;
+    transform: scaleY(0);
+    box-shadow: 0 0 28px 6px rgba(212,165,50,0.55), 0 0 90px 24px rgba(212,165,50,0.22);
+    position: relative;
+    animation: open 1.6s 0.5s cubic-bezier(.2,.8,.2,1) forwards;
+  }
+  .eye:first-child { transform: scaleY(0) scaleX(-1); animation-name: open-left; }
+  .eye::after {
+    content: "";
+    position: absolute;
+    left: 50%; top: 8%;
+    width: 7%; height: 84%;
+    background: var(--black);
+    border-radius: 50%;
+    transform: translateX(-50%);
+  }
+  @keyframes open { to { transform: scaleY(1); } }
+  @keyframes open-left { to { transform: scaleY(1) scaleX(-1); } }
+
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(2.6rem, 11vw, 6.2rem);
+    line-height: 0.98;
+    letter-spacing: 0.01em;
+    background: linear-gradient(180deg, var(--gold-bright) 10%, var(--gold) 55%, var(--gold-deep) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    opacity: 0;
+    animation: rise 1.4s 1.7s ease forwards;
+  }
+  .hero .line {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(1.15rem, 4.2vw, 1.6rem);
+    color: var(--bone);
+    margin-top: 1.1rem;
+    opacity: 0;
+    animation: rise 1.2s 2.3s ease forwards;
+  }
+  .hero .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    justify-content: center;
+    margin-top: 2.4rem;
+    opacity: 0;
+    animation: rise 1s 2.8s ease forwards;
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.85rem 1.7rem;
+    font-family: var(--body);
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    border: 1.5px solid var(--gold);
+    color: var(--gold-bright);
+    border-radius: 2px;
+    transition: background .2s, color .2s;
+  }
+  .btn:hover { background: rgba(212,165,50,0.14); }
+  .btn.primary { background: var(--gold); color: var(--black); }
+  .btn.primary:hover { background: var(--gold-bright); }
+
+  section.block { max-width: 44rem; margin: 0 auto; padding: 5rem 1.5rem; }
+  section.block + section.block { border-top: 1px solid rgba(212,165,50,0.22); }
+  h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(1.9rem, 6vw, 2.7rem);
+    line-height: 1.1;
+    color: var(--gold-bright);
+    margin-bottom: 1.4rem;
+  }
+  p + p { margin-top: 1.1rem; }
+  .muted { color: var(--ash); }
+
+  .cliff {
+    margin-top: 1.8rem;
+    padding-left: 1.2rem;
+    border-left: 3px solid var(--gold);
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 1.25rem;
+    line-height: 1.45;
+    color: var(--bone);
+  }
+
+  .episodes { list-style: none; }
+  .episodes li { border-bottom: 1px solid rgba(237,230,214,0.12); }
+  .episodes a {
+    display: grid;
+    grid-template-columns: 4.2rem 1fr;
+    gap: 1rem;
+    align-items: baseline;
+    padding: 1.25rem 0;
+    text-decoration: none;
+  }
+  .episodes .num { font-family: var(--display); font-size: 1.6rem; font-weight: 700; color: var(--gold); }
+  .episodes .title { font-family: var(--display); font-size: 1.3rem; font-weight: 500; color: var(--bone); }
+  .episodes .note { display: block; font-size: 0.95rem; color: var(--ash); margin-top: 0.15rem; }
+  .episodes a:hover .title { color: var(--gold-bright); }
+  .episodes .soon .num, .episodes .soon .title { color: var(--ash); }
+  .episodes .soon { cursor: default; }
+
+  .follow { text-align: center; }
+  .follow p { max-width: 30rem; margin-left: auto; margin-right: auto; }
+  .follow .btn { margin-top: 2rem; }
+
+  footer {
+    text-align: center;
+    padding: 2.5rem 1.5rem calc(3rem + env(safe-area-inset-bottom, 0px));
+    color: var(--ash);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(212,165,50,0.22);
+  }
+  footer strong { font-family: var(--display); color: var(--gold); font-weight: 700; letter-spacing: 0.03em; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .eye, .eye:first-child { animation: none; transform: scaleY(1); }
+    .eye:first-child { transform: scaleY(1) scaleX(-1); }
+    .hero h1, .hero .line, .hero .actions { animation: none; opacity: 1; }
+  }
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+  <div class="eyes" aria-hidden="true">
+    <div class="eye"></div>
+    <div class="eye"></div>
+  </div>
+  <h1>Black Crown<br>Legacy</h1>
+  <p class="line">Power is easy to take. Keeping the crown is the fight.</p>
+  <div class="actions">
+    <a class="btn primary" href="YOUR_SUBSCRIBE_LINK">Subscribe on YouTube</a>
+    <a class="btn" href="#episodes">Watch the episodes</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="block story" id="story">
+    <h2>The Panther King</h2>
+    <p>He rules a gold kingdom from a throne of black stone, with two enormous black panthers at his side and an army in gold armor at his back. Wealth, loyalty, and fear hold the empire together.</p>
+    <p>Every ruler has rivals. Every kingdom has people waiting for it to fall.</p>
+    <p class="cliff">A storm like no one has ever seen is tearing through the kingdom. Rivals are using the chaos to move on the throne. The King could hide. Instead, he walks out into the storm.</p>
+  </section>
+
+  <section class="block" id="episodes">
+    <h2>Episodes</h2>
+    <p class="muted" style="margin-bottom:1rem;">Every episode ends on a cliffhanger. Start at the top and keep going.</p>
+    <ol class="episodes">
+      <li>
+        <a href="YOUR_EPISODE_LINK">
+          <span class="num">2</span>
+          <span><span class="title">The Challenger</span><span class="note">A rival steps forward and the throne room goes silent.</span></span>
+        </a>
+      </li>
+      <li class="soon">
+        <a>
+          <span class="num">3</span>
+          <span><span class="title">Coming soon</span><span class="note">Subscribe so you don't miss it.</span></span>
+        </a>
+      </li>
+    </ol>
+  </section>
+
+  <section class="block follow" id="follow">
+    <h2>Join the Legacy</h2>
+    <p>New episodes drop on YouTube Shorts. Subscribe and find out who survives the storm.</p>
+    <a class="btn primary" href="YOUR_SUBSCRIBE_LINK">Subscribe on YouTube</a>
+  </section>
+
+</main>
+
+<footer>
+  <p><strong>Black Crown Legacy</strong></p>
+  <p style="margin-top:.4rem;">blackcrown.live</p>
+</footer>
+
+</body>
